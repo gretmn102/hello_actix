@@ -17,10 +17,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build
-      run: cargo build --verbose
+      run: cargo build --verbose --release
     - name: Run tests
       run: cargo test --verbose
     - uses: actions/upload-artifact@v3
       with:
         name: my-artifact
-        path: target/debug/hello_actix
+        path: target/release/hello_actix
